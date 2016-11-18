@@ -90,7 +90,7 @@ public final class WorkUnit {
     public void setExecutable(Executable executable) {
         this.executable = executable;
         if (executable instanceof Run) {
-            ((Run) executable).setQueueId(context.item.getId());
+            ((Run) executable).setQueueInfo(context.item);
         }
     }
 

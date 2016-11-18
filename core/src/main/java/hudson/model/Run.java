@@ -445,6 +445,16 @@ public abstract class Run <JobT extends Job<JobT,RunT>,RunT extends Run<JobT,Run
     }
 
     /**
+     * Set queue item ID and queue start time. Extracted from {@link Queue.Item#getId()} and {@link Queue.Item#getInQueueSince()}.
+     * @param queueItem The queue item.
+     */
+    @Restricted(NoExternalUse.class)
+    public void setQueueInfo(Queue.Item item) {
+        this.queueId = item.getId();
+        this.timestamp = item.getInQueueSince();
+    }
+
+    /**
      * Returns the build result.
      *
      * <p>
