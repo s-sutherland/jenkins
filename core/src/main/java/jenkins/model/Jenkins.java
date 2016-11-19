@@ -2087,6 +2087,7 @@ public class Jenkins extends AbstractCIBase implements DirectlyModifiableTopLeve
      * Removes a {@link Node} from Jenkins.
      */
     public void removeNode(@Nonnull Node n) throws IOException {
+        n.onDelete();
         nodes.removeNode(n);
     }
 

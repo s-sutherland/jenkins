@@ -525,6 +525,12 @@ public abstract class Node extends AbstractModelObject implements Reconfigurable
      * @since 1.522
      */
     public abstract Callable<ClockDifference,IOException> getClockDifferenceCallable();
+	
+	/**
+	 * Called when a node is deleted from Jenkins.
+	 */
+	public void onDelete() {
+	}
 
     /**
      * Constants that control how Hudson allocates jobs to agents.
